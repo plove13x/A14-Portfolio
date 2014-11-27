@@ -1,0 +1,230 @@
+// COLOR VARIABLES
+
+$purple1: RGBA(101, 45, 134, 1);
+$blue: RGBA(0, 57, 166, 1);
+$green: RGBA(0, 155, 72, 1);
+$coolPurple: RGBA(56, 30, 103, 1);
+
+$teal1: RGBA(0, 124, 146, 1);
+$teal3: RGBA(1, 117, 142, 1);
+$coolTeal: RGBA(0, 177, 185, 1);
+$deepPurple2: RGBA(29, 16, 96, 1);
+$deepPurple3: RGBA(32, 23, 70, 1);
+
+$teal2: RGBA(0, 141, 169, 1);
+$deepPurple1: RGBA(36, 0, 120, 1);
+
+
+// GLOBAL STYLE
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+p {
+    margin-bottom: 1em;
+}
+
+.center {
+    text-align: center;
+}
+
+body {
+    padding-top: 3em;       // 26px;
+    padding-bottom: 20px;
+    width: 75%;
+    margin: 0 auto;
+    background-image: url('../images/khaki.gif');
+}
+
+
+// HEADER STYLE
+
+.header {
+    height: 325px;
+}
+
+.sliderContainer {
+    position: relative;
+}
+
+.headerTextContainer {
+    font-family: garamond;
+    position: absolute;
+    top: 1em;
+    width: 100%;
+    z-index: 10;
+
+    .headerText {
+        width: 100%;
+        text-align: center;
+    }
+
+    h1 {
+        display: inline-block;
+        margin-right: 1em;
+    }
+
+    h2 {
+        display: inline-block;
+        margin-left: 1em;
+        font-size: 1em;
+        color: red;
+        font-style: italic;
+    }
+}
+
+.slider-images {
+    height: 325px;
+    width: 100%;
+    -webkit-border-radius: 13px 13px 0 0;
+    -moz-border-radius: 13px 13px 0 0;
+    border-radius: 13px 13px 0 0;
+}
+
+
+// NOT HEADER STYLE
+
+.sectionHeader {
+    color: white;
+    margin: 2em 0;
+    text-align: center;
+    font-family: 'Julius Sans One', sans-serif;
+    text-shadow: 0.1em 0.1em 0.2em $deepPurple1;
+}
+
+.notHeader {
+    min-height: 500px;
+    border: 2px solid $deepPurple1;
+    padding-bottom: 2em;
+    font-family: garamond;
+    // font-family: 'Josefin Sans', sans-serif;
+    // font-family: 'Goudy Bookletter 1911', serif;
+
+    // font-weight: 700;
+    // letter-spacing: 0.1em;
+    line-height: 1.5em;
+
+    background: #8DC91A;
+    // background: #98ce30;
+
+    // background: #007824;
+
+    // background: #117D72;
+    // background: #018CA9;
+    // background: $teal2;
+
+    
+
+}
+
+.purps {
+    background: $deepPurple1;
+    min-height: 1em;
+}
+
+.introText {
+    width: 85%;
+    margin: 0 auto; 
+    color: black;
+    font-weight: 400;
+    text-shadow: 0px 2px 2px rgba(36, 0, 120, 0.2);
+}
+
+.italic {
+    font-style: italic;
+    margin-top: 2em;
+}
+
+.footnote {
+    text-shadow: none;
+    font-size: 0.75em;
+}
+
+.project {
+    width: 85%;
+    margin: 0 auto 1em;
+}
+
+.projectSS {
+    display: inline-block;
+    width: 40%;
+    
+    img {
+        width: 85%;
+        height: 13em;
+    }
+}
+
+.projectRC {
+    display: inline-block;
+    vertical-align: top;
+    width: 60%;
+
+    h4 {
+        // font-family: garamond;
+        color: white;
+        background: $deepPurple1;
+        padding: 0.5em;
+    }
+
+    p {
+        width: 90%;
+        margin: 1em auto;
+        text-shadow: 0px 2px 2px rgba(36, 0, 120, 0.2);
+    }
+}
+
+.chart h5 {
+    margin: -2em 0 4em;
+    text-align: center;
+    font-family: 'Julius Sans One', sans-serif;
+}
+
+#regions_div {
+    margin: 2em auto;
+}
+
+.contactInfo {
+    width: 85%;
+    margin: 0 auto;
+
+    .iconLinks {
+        margin: 0 auto;
+        text-align: center;
+        // background: white;
+    }
+
+    a {
+        color: black;
+        // margin: 0 1em;
+    }
+
+    a:hover {
+        color: $deepPurple1;
+    }
+
+    .two {
+        display: inline-block;
+        margin: 0 1em;
+    }
+
+    .relative {
+        position: relative;
+    }
+
+    span {
+        font-size: 4em;
+        text-align: center;
+        width: 100%;
+    }
+
+    .middle {
+        font-size: 1em;
+    }
+}
