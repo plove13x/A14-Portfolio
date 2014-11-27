@@ -126,38 +126,75 @@ body {
 .purps {
     background: $deepPurple1;
     min-height: 1em;
+    color: white;
+    font-style: none;
 }
+
 
 .introText {
     width: 85%;
     margin: 0 auto; 
     color: black;
     font-weight: 400;
-    text-shadow: 0px 2px 2px rgba(36, 0, 120, 0.2);
+    // text-shadow: 0px 2px 2px rgba(36, 0, 120, 0.2);
 }
 
 .italic {
     font-style: italic;
-    margin-top: 2em;
+    // margin-top: 2em;
+    text-shadow: 0px 2px 2px rgba(36, 0, 120, 0.2);
 }
 
-.footnote {
-    text-shadow: none;
-    font-size: 0.75em;
+.rollIt {
+    // color: $deepPurple1;
+    // font-weight: bold;
+}
+
+.rollIt:hover{
+    color: $deepPurple1;
+}
+
+.purps2 {
+    color: $deepPurple1;
+    font-weight: bold;
+    font-style: normal;
+}
+
+.onRoll {
+    display: none;
+    margin: 2em 0;
+    font-size: 1em;
+    font-style: italic;
+    // font-size: 0.75em;
+    // z-index: 2;
 }
 
 .project {
     width: 85%;
-    margin: 0 auto 1em;
+    margin: 3em auto 3em;
+    // border-bottom: 1px dotted white;
 }
+
+// .last {
+//     border-bottom: none;
+// }
 
 .projectSS {
     display: inline-block;
     width: 40%;
+
+    .SSContainerRight {
+        margin-left: 10%;
+    }
+
+    .SSContainerLeft {
+        margin-right: 10%;
+    }
     
     img {
-        width: 85%;
+        width: 100%;
         height: 13em;
+        border-radius: 1px;
     }
 }
 
@@ -176,9 +213,29 @@ body {
     p {
         width: 90%;
         margin: 1em auto;
-        text-shadow: 0px 2px 2px rgba(36, 0, 120, 0.2);
+        // text-shadow: 0px 2px 2px rgba(36, 0, 120, 0.2);
+    }
+
+    .noMargin {
+        margin-top: -0.5em;
+    }
+
+    .noMargin a {
+        font-weight: bold;
+        color: black;
+    }
+
+    .noMargin a:hover {
+        color: white;
     }
 }
+
+.whiteDotBtm {
+    padding-bottom: 1em;
+    border-bottom: 1px dotted white;
+}
+
+
 
 .chart h5 {
     margin: -2em 0 4em;
