@@ -5,6 +5,8 @@ var gulp = require('gulp');
 
 // load plugins
 var $ = require('gulp-load-plugins')();
+var exec = require('child_process').exec;
+var prompt = require('gulp-prompt');
 
 gulp.task('styles', function () {
     return gulp.src('app/styles/main.scss')
@@ -44,11 +46,11 @@ gulp.task('html', ['styles', 'scripts'], function () {
 
 gulp.task('images', function () {
     return gulp.src('app/images/**/*')
-        .pipe($.cache($.imagemin({
+        .pipe($.imagemin({
             optimizationLevel: 3,
             progressive: true,
             interlaced: true
-        })))
+        }))
         .pipe(gulp.dest('dist/images'))
         .pipe($.size());
 });
@@ -68,6 +70,25 @@ gulp.task('extras', function () {
 
 gulp.task('clean', function () {
     return gulp.src(['.tmp', 'dist'], { read: false }).pipe($.clean());
+});
+
+gulp.task('deploy', function() {
+
+  gulp.src('/')
+    .pipe($.prompt.prompt({
+        type: 'confirm',
+        name: 'task',
+        message: 'This will deploy to GitHub Pages. Have you already built your application and pushed your updated master branch?'
+    }, function(res){
+      if (res.task){
+        console.log('Attempting: "git subtree push --prefix dist origin gh-pages"');
+        exec('git subtree push --prefix dist origin gh-pages', function(err, stdout, stderr) {
+            console.log(stdout);
+            console.log(stderr);
+        });
+      } else { console.log('Please do this first and then run `gulp deploy` again.'); }
+    }));
+
 });
 
 gulp.task('build', ['html', 'images', 'fonts', 'extras']);
@@ -96,22 +117,22 @@ gulp.task('serve', ['connect', 'styles'], function () {
 });
 
 // inject bower components
-gulp.task('wiredep', function () {
-    var wiredep = require('wiredep').stream;
+// gulp.task('wiredep', function () {
+//     var wiredep = require('wiredep').stream;
 
-    gulp.src('app/styles/*.scss')
-        .pipe(wiredep({
-            directory: 'app/bower_components'
-        }))
-        .pipe(gulp.dest('app/styles'));
+//     gulp.src('app/styles/*.scss')
+//         .pipe(wiredep({
+//             directory: 'app/bower_components'
+//         }))
+//         .pipe(gulp.dest('app/styles'));
 
-    gulp.src('app/*.html')
-        .pipe(wiredep({
-            directory: 'app/bower_components',
-            exclude: ['bootstrap-sass-official']
-        }))
-        .pipe(gulp.dest('app'));
-});
+//     gulp.src('app/*.html')
+//         .pipe(wiredep({
+//             directory: 'app/bower_components',
+//             exclude: ['bootstrap-sass-official']
+//         }))
+//         .pipe(gulp.dest('app'));
+// });
 
 gulp.task('watch', ['connect', 'serve'], function () {
     var server = $.livereload();
@@ -130,5 +151,5 @@ gulp.task('watch', ['connect', 'serve'], function () {
     gulp.watch('app/styles/**/*.scss', ['styles']);
     gulp.watch('app/scripts/**/*.js', ['scripts']);
     gulp.watch('app/images/**/*', ['images']);
-    gulp.watch('bower.json', ['wiredep']);
+    // gulp.watch('bower.json', ['wiredep']);
 });
