@@ -50,6 +50,18 @@ function drawRegionsMap() {
         // resolution: 'provinces'
     };
 
-    var chart = new google.visualization.GeoChart(document.getElementById('regions_div'));
-    chart.draw(data, options);
+    // var chart = new google.visualization.GeoChart(document.getElementById('regions_div'));
+    // chart.draw(data, options);
+
+
+
+    // ADDED WHAT'S BELOW AND COMMENTED OUT TWO LINES ABOVE TO MAKE IT RESPONSIVE
+
+    function resize () {
+        var chart = new google.visualization.GeoChart(document.getElementById('regions_div'));
+        chart.draw(data, options);
+    };
+
+    window.onload = resize();
+    window.onresize = resize;
 }
