@@ -18,7 +18,7 @@ function Slider(array, location, interval, fade) {
     };
 };
 
-var newSlider = new Slider(imageArray, '.slider-images', 2000, 0);
+var newSlider = new Slider(imageArray, '.slider-images', 3000, 0);
 
 
 
