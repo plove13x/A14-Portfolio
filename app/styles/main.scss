@@ -371,8 +371,9 @@ body {
     }
 
     a {
-        color: $deepPurple1;
+        color: black;
         font-weight: bold;
+        text-shadow: 0.1em 0.1em 0.2em rgba(36, 0, 120, 0.2);
     }
 
     a:hover {
@@ -386,6 +387,9 @@ body {
         border: 1px solid white;
         padding: 0.25em 0.5em;
         outline: 0;
+        transition-property: background;
+        transition-duration: 0.25s;
+        transition-timing-function: linear;
     }
 
     button:hover {
