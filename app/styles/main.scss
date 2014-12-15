@@ -14,6 +14,9 @@ $deepPurple3: RGBA(32, 23, 70, 1);
 $teal2: RGBA(0, 141, 169, 1);
 $deepPurple1: RGBA(36, 0, 120, 1);
 
+$lime1: RGBA(157, 224, 29, 1);      // #9DE01D
+$lime2: RGBA(141, 201, 26, 1);      // "Pea-colored": #8DC91A;
+
 
 // GLOBAL STYLE
 
@@ -35,8 +38,8 @@ p {
 }
 
 body {
-    padding-top: 3em;       // 26px;
-    padding-bottom: 20px;
+    padding: 3em 0;       // 26px;
+    // padding-bottom: 20px;
     width: 75%;
     margin: 0 auto;
     background-image: url('../images/khaki.gif');
@@ -51,6 +54,7 @@ body {
 
 .header {
     height: 325px;
+    position: relative;
 }
 
 .sliderContainer {
@@ -91,6 +95,33 @@ body {
     border-radius: 13px 13px 0 0;
 }
 
+.sideNav {
+    position: fixed;
+    top: 3em;
+    right: 3.25%;
+    display: inline-block;
+    width: 6%;
+    // padding: 1em 0;
+    background: $deepPurple1; 
+
+    a {
+        color: $lime1;
+    }
+
+    a:hover {
+        color: white;
+    }
+
+    a:active {
+        color: white;
+    }
+
+    p {
+        text-align: center;
+        margin: 1.5em 0;
+    }
+}
+
 
 // NOT HEADER STYLE
 
@@ -114,7 +145,11 @@ body {
     // letter-spacing: 0.1em;
     line-height: 1.5em;
 
-    background: #8DC91A;
+    background: $lime1;
+
+    -webkit-border-radius: 0 0 13px 13px;
+    -moz-border-radius: 0 0 13px 13px;
+    border-radius: 0 0 13px 13px;
     // background: #98ce30;
 
     // background: #007824;
@@ -371,9 +406,9 @@ body {
     }
 
     a {
-        color: black;
+        color: $deepPurple1;
         font-weight: bold;
-        text-shadow: 0.1em 0.1em 0.2em rgba(36, 0, 120, 0.2);
+        text-shadow: 0.1em 0.1em 0.2em rgba(36, 0, 120, 0.1);
     }
 
     a:hover {
@@ -444,6 +479,13 @@ body {
     // .shrunkPic img {
     //     width: 100%;
     // }
+}
+
+@media (max-width: 600px) {
+    .sideNav span {
+        font-size: 100%;
+        // margin-top: 1em;
+    }
 }
 
 @media (min-width: 601px) and (max-width: 712px) {
