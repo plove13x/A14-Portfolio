@@ -2,8 +2,9 @@
 
 // $(document).ready(function(){
 
+    var imageArray = new Array("images/headerImg3.jpg", "images/headerImg2.jpg", "images/headerImg1.jpg", "images/headerImg4.jpg", "images/headerImg5.jpg", "images/headerImg7.jpg", "images/headerImg8.jpg", "images/headerImg9.jpg", "images/headerImg14.jpg", "images/headerImg11.jpg", "images/headerImg15.jpg", "images/headerImg10.jpg", "images/headerImg19.jpg", "images/headerImg18.jpg", "images/headerImg13.jpg", "images/headerImg24.jpg");
+    
     $(window).load(function(){
-        var imageArray = new Array("images/headerImg1.jpg", "images/headerImg2.jpg", "images/headerImg3.jpg", "images/headerImg4.jpg", "images/headerImg5.jpg", "images/headerImg7.jpg", "images/headerImg8.jpg", "images/headerImg9.jpg", "images/headerImg14.jpg", "images/headerImg11.jpg", "images/headerImg15.jpg", "images/headerImg10.jpg", "images/headerImg19.jpg");
 
         function Slider(array, location, interval, fade) {
             var imageCount = array.length,
@@ -67,6 +68,24 @@ $(document).ready(function(){
 
     $('.shrunkPic').on('mouseout', function() {
         $(this).find('.blackRollUp').fadeOut(2000);
+    });
+
+
+//     $('.projectRC').bind('touchstart touchend', function() {
+//         // var hoverP = $(this).find('.blackRollUp');
+//         // // hoverP.toggleClass('hover_effect');
+//         // hoverP.fadeIn(1000).stop();
+//         $(this).find('.blackRollUp').fadeIn(1000).stop();
+//     });
+
+    $('.projectRC').on({ 'touchstart' : function(){ 
+        $(this).find('.blackRollUp').fadeIn(1500).stop();
+        } 
+    });
+
+    $('.projectRC').on({ 'touchend' : function(){ 
+        $(this).find('.blackRollUp').fadeOut(1500);
+        } 
     });
 
     // $('.SSContainerLeft').on('mouseover', function() {
