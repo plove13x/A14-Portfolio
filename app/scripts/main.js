@@ -1,7 +1,6 @@
 'use strict';
 
 // $(document).ready(function(){
-$(document).ready(function(){
 
     $(window).load(function(){
         var imageArray = new Array("images/headerImg1.jpg", "images/headerImg2.jpg", "images/headerImg3.jpg", "images/headerImg4.jpg", "images/headerImg5.jpg", "images/headerImg7.jpg", "images/headerImg8.jpg", "images/headerImg9.jpg", "images/headerImg14.jpg", "images/headerImg11.jpg", "images/headerImg15.jpg", "images/headerImg10.jpg", "images/headerImg19.jpg");
@@ -27,6 +26,8 @@ $(document).ready(function(){
         var newSlider = new Slider(imageArray, '.slider-images', 3000, 0);
     });
 
+
+$(document).ready(function(){
 
     $('.rollIt').hover(
         function(){
@@ -133,6 +134,25 @@ $(document).ready(function(){
     //     console.log($('.fFact'));
 
     // });
+
+
+    var $window = $(window);
+    var $document = $(document);
+    var docHeight = $(document).height();
+    var $sideNav = $('.sideNav');
+    var noShow = $('.contactInfo').offset().top - $window.height();
+
+    $window.on('scroll', function() {
+        // console.log(docHeight);
+        // console.log(noShow);
+        // console.log( (docHeight - $window.scrollTop()) );
+
+        if ( (docHeight - noShow - 100) > (docHeight - $window.scrollTop()) ) {
+            $sideNav.hide();
+        } else {
+            $sideNav.show();
+        }
+    });
 
 });
 
