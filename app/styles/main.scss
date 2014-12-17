@@ -225,7 +225,9 @@ body {
 }
 
 .project {
+    // position: relative;
     width: 85%;
+    height: 100%;
     margin: 3em auto 3em;
     // border-bottom: 1px dotted white;
 }
@@ -437,6 +439,29 @@ body {
         border: none;
     }
 
+}
+
+.leftM {
+    position: absolute;
+    height: 57.5%;
+    // margin: 3em 0;
+    margin-left: -20%;
+    width: 15%;
+}
+
+.leftMRG {
+    position: absolute;
+    height: 57.5%;
+    left: 0;
+    width: 15%;
+}
+
+.rightM {
+    position: absolute;
+    height: 57.5%;
+    left: 85%;
+    width: 15%;
+    // margin: 3em 0;
 }
 
 

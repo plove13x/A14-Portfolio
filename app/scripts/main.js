@@ -79,12 +79,27 @@ $(document).ready(function(){
 //     });
 
     $('.projectRC').on({ 'touchstart' : function(){ 
-        $(this).find('.blackRollUp').fadeIn(1500).stop();
+        $(this).find('.blackRollUp').show();
+        // fadeIn(1500).stop();
         } 
     });
 
+    $('.projectRC').on({ 'touchmove' : function(){ 
+        $(this).find('.blackRollUp').show();
+        // fadeIn(1500).stop();
+        } 
+    });
+
+    $(' .leftM, .rightM').on({ 'touchmove' : function(){ 
+        $(this).next('.blackRollUp').show();
+        // fadeIn(1500).stop();
+        } 
+    });
+
+
+
     $('.projectRC').on({ 'touchend' : function(){ 
-        $(this).find('.blackRollUp').fadeOut(1500);
+        $(this).find('.blackRollUp').fadeOut(2500);
         } 
     });
 
@@ -118,7 +133,7 @@ $(document).ready(function(){
     'Speaking of high school, I (thanks to some timely self-deprecating humor) was elected as both junior and senior class president of my high school class and gave our graduation speech. I also served as Managing Editor of our high school newspaper that won 1st place at the <em>Dallas Morning News\’</em> Journalism Day competition. Dork!',
     'I love basketball and once tried out for an American Basketball Association team. Ultimately I wasn\'t offered a contract, but on the plus side, I was invited back for another tryout. On the not-so-plus side, one large man who was already under contract chose to refer to me exclusively as "Little Man". This was the first and only time in my life this has happened.',
     'Some might say in my younger years I could be a bit of a problem child, but I wasn\'t the <em>Problem Child</em>. However, since some of the movie\'s birthday party scene was filmed at our house, a keen eye will notice young me in a lion costume. Any Oscar noms went to my Mom though for her role as "woman gets pinned on the ass". Check it out on YouTube: <a target="_blank" href="https://www.youtube.com/watch?v=KhAg5po8InY"><em>Problem Child</em> party scene clip</a>',
-    'My junior high (5th-8th grade) holds an annual skoolwide spelling bee. I akshally won it twyse (6th and 8th grade)!'
+    'My junior high (5th-8th grade) holds an annual schoolwide spelling bee, and somehow I won the whole thing twice (6th and 8th grade)!'
     ];
 
     var counterFF = 0;
